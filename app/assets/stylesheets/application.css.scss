@@ -16,3 +16,75 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+body {
+  background-color: #00A2E8;
+  color: white;
+
+  header#top {
+    margin-bottom: 0;
+    background-color: #fff;
+    border-bottom: 0;
+
+    .navbar-nav li a {
+      font-weight: 500;
+      color: #563d7c;
+    }
+
+    a.navbar-brand {
+      font-weight: 500;
+      color: #563d7c;
+    }
+  }
+
+  .main-content {
+    margin: auto;
+    margin-top: 40px;
+    width: 940px;
+
+    h1.message {
+      text-align: center;
+    }
+
+    .signup-panel {
+      margin-top: 40px;
+
+      .left-message {
+        font-size: 16px;
+      }
+
+      .signup-form {
+        border: 2px solid white;
+        padding: 20px;
+
+        .form-group {
+          margin-top: 30px;
+        }
+
+        .btn-submit {
+          border-radius: 0px;
+          color: black;
+          background-color: white;
+        }
+
+        label {
+          font-size: 20px;
+        }
+
+        input {
+          border-radius: 0px;
+        }
+      }
+    }
+
+
+    .foot-message {
+      margin-top: 40px;
+      text-align: center;
+      p {
+        font-size: 24px;
+      }
+    }
+    
+  }
+}
