@@ -1,10 +1,20 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers => { :registrations => "registrations", confirmations: 'confirmations' }
+  devise_for :users, :controllers => { :registrations => "registrations" }
 
   root 'pages#home'
 
   get '/confirm_your_email' => 'pages#confirmation'
   get '/success' => 'pages#confirmation_success'
+
+  resources :users, only: %w[] do
+    collection do
+      get :registrations
+    end
+
+    member do
+      get :confirm
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

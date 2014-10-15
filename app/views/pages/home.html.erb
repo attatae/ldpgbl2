@@ -1,58 +1,44 @@
-<header class="navbar navbar-static-top" id="top" role="banner">
-  <div class="container">
-    <div class="navbar-header">
-      <a href="#" class="navbar-brand">Bootstrap</a>
-    </div>
-    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Login</a></li>
-      </ul>
-    </nav>
+
+<h1 class="message">Get your city invited.</h1>
+
+<div class="row signup-panel">
+  <div class="col-xs-4 left-message">
+    <p> Sign up for an invite today. Cities with most votes will be invited as we roll out.</p>
   </div>
-</header>
-<div class="main-content">
-  <h1 class="message">Get your city invited.</h1>
+  <div class="col-xs-8">
+    <div class="signup-form clearfix">
+      <%= simple_form_for(@user, url: registration_path(@user)) do |f| %>
+        <%= f.error_notification %>
 
-  <div class="row signup-panel">
-    <div class="col-xs-4 left-message">
-      <p> Sign up for an invite today. Cities with most votes will be invited as we roll out.</p>
-    </div>
-    <div class="col-xs-8">
-      <div class="signup-form clearfix">
-        <%= simple_form_for(@user, url: registration_path(@user)) do |f| %>
-          <%= f.error_notification %>
-
-          <div class="form-inputs form-group clearfix">
-            <div class="col-xs-3">
-              <%= label_tag(:email, "Email") %>
-            </div>
-            <div class="col-xs-7">
-              <%= f.input :email, label: false , autofocus: true, input_html: { class: 'form-control' } %>
-            </div>
+        <div class="form-inputs form-group clearfix">
+          <div class="col-xs-3">
+            <%= label_tag(:email, "Email") %>
           </div>
-
-          <div class="form-inputs form-group clearfix">
-            <div class="col-xs-3">
-              <%= label_tag(:city, "City") %>
-            </div>
-            <div class="col-xs-7">
-              <%= f.input :city, label: false, input_html: { class: 'form-control' } %>
-            </div>
+          <div class="col-xs-7">
+            <%= f.input :email, label: false , autofocus: true, input_html: { class: 'form-control' } %>
           </div>
+        </div>
 
-          <div class="form-group clearfix">
-            <div class="col-xs-3"></div>
-            <div class="col-xs-7">
-              <%= f.button :submit, "Sign up", class: 'btn btn-submit' %>
-            </div>
+        <div class="form-inputs form-group clearfix">
+          <div class="col-xs-3">
+            <%= label_tag(:city, "City") %>
           </div>
-        <% end %>
-      </div>
+          <div class="col-xs-7">
+            <%= f.input :city, label: false, input_html: { class: 'form-control' } %>
+          </div>
+        </div>
+
+        <div class="form-group clearfix">
+          <div class="col-xs-3"></div>
+          <div class="col-xs-7">
+            <%= f.button :submit, "Sign up", class: 'btn btn-submit' %>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
+</div>
 
-  <div class="row foot-message">
-    <p> Text is the best way text write copy your next write text copy </p>
-  </div>
+<div class="row foot-message">
+  <p> Text is the best way text write copy your next write text copy </p>
 </div>

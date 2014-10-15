@@ -9,6 +9,7 @@ gem 'pry'
 gem 'devise'
 gem 'simple_form'
 gem 'settingslogic'
+gem 'annotate', '~> 2.6.5'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
