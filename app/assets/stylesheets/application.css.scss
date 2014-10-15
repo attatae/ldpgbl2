@@ -19,7 +19,6 @@
 
 body {
   background-color: #00A2E8;
-  color: white;
 
   header#top {
     margin-bottom: 0;
@@ -42,52 +41,57 @@ body {
     margin-top: 40px;
     width: 940px;
 
-    h1.message {
-      text-align: center;
-    }
-
-    .signup-panel {
-      margin-top: 40px;
-
-      .left-message {
-        font-size: 16px;
+    .landing-page {
+      h1.message {
+        text-align: center;
       }
 
-      .signup-form {
-        border: 2px solid white;
-        padding: 20px;
+      .signup-panel {
+        margin-top: 40px;
 
-        .form-group {
-          margin-top: 30px;
+        .left-message {
+          font-size: 16px;
         }
 
-        .btn-submit {
-          border-radius: 0px;
-          color: black;
-          background-color: white;
-        }
+        .signup-form {
+          border: 2px solid white;
+          padding: 20px;
 
-        label {
-          font-size: 20px;
-        }
+          .form-group {
+            margin-top: 30px;
+          }
 
-        input {
-          border-radius: 0px;
-          background-color: #00A2E8;
-          border: 1px solid white;
-          color: white;
+          .btn-submit {
+            border-radius: 0px;
+            color: black;
+            background-color: white;
+          }
+
+          label {
+            font-size: 20px;
+          }
+
+          input {
+            border-radius: 0px;
+            background-color: #00A2E8;
+            border: 1px solid white;
+            color: white;
+          }
+        }
+      }
+
+
+      .foot-message {
+        margin-top: 40px;
+        text-align: center;
+        p {
+          font-size: 24px;
         }
       }
     }
-
-
-    .foot-message {
-      margin-top: 40px;
-      text-align: center;
-      p {
-        font-size: 24px;
-      }
+    .list-users {
+      background-color: white;
+      padding: 20px;
     }
-    
   }
 }

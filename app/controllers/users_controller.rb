@@ -7,4 +7,8 @@ class UsersController < ApplicationController
       redirect_to '/success', notice: "Invalid!"
     end
   end
+
+  def registrations
+    @users = User.page(params[:page]).per(20)
+  end
 end

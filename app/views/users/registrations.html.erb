@@ -1,0 +1,33 @@
+<div class="list-users">
+  All Users
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>IP detected</th>
+        <th>Email</th>
+        <th>City</th>
+        <th>Time and Date of signup</th>
+        <th>Browser</th>
+        <th>Referrals</th>
+        <th>Confirmed?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each_with_index do |user, index| %>
+        <tr>
+          <th><%= index + 1 + ((params[:page] || 1).to_i - 1) * 20 %></th>
+          <th><%= user.ip_detected_location %></th>
+          <th><%= user.email %></th>
+          <th><%= user.city %></th>
+          <th><%= user.created_at %></th>
+          <th><%= user.browser %></th>
+          <th><%= user.referrals %></th>
+          <th><%= user.confirmed? %></th>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= paginate @users %>
+</div>
