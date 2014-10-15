@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users
-  get 'pages/home'
+  devise_for :users, :controllers => { :registrations => "registrations", confirmations: 'confirmations' }
 
   root 'pages#home'
+
+  get '/confirm_your_email' => 'pages#confirmation'
+  get '/success' => 'pages#confirmation_success'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
