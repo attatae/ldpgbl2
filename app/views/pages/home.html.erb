@@ -60,7 +60,6 @@
   $("input#user_city").select2({
     multiple: true,
     maximumSelectionSize: 1,
-    placeholder: "Search for cities",
     minimumInputLength: 1,
     id: function(bond){ return bond; },
     ajax: {
@@ -88,16 +87,36 @@
 </script>
 
 <style type="text/css">
-  .select2-container {
-    /*padding: 0;
-    height: auto!important;
-    background-color: #00A2E8;
+  .select2-search-choice {
+    background-image: none!important;
+    background-color: #00A2E8!important;
+    width: 275px!important;
+    padding: 3px 5px 3px 18px!important;
+    margin: 0!important;
+    line-height: 26px!important;
+    color: white!important;
+    cursor: default!important;
+    border: none!important;
+    border-radius: 0px!important;
+    box-shadow: none!important;
+  }
+  .select2-search-field {
+    background-color: #00A2E8!important;
+  }
+  ul.select2-choices {
+    background-color: #00A2E8!important;
+    border-radius: 0!important;
+    background-image: none!important;
+  }
+  .form-control {
+    color: white!important;
+    background-color: #00A2E8!important;
+    background-image: none!important;
     border: 1px solid white;
-    input {
-      border-radius: 0px;
-      background-color: #00A2E8;
-      border: 1px solid white;
-      color: white;
-    }*/
+    border-radius: 0!important;
+  }
+
+  input.select2-input{
+    border: none!important;
   }
 </style>
