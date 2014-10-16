@@ -11,6 +11,7 @@ gem 'simple_form'
 gem 'settingslogic'
 gem 'annotate', '~> 2.6.5'
 gem 'kaminari'
+gem 'select2-rails'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'

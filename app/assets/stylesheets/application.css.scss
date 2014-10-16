@@ -12,10 +12,10 @@
  *
  *= require_tree .
  *= require_self
+ *= require bootstrap1
+ *= require select2
+ *= require select2-bootstrap
  */
-
-@import "bootstrap-sprockets";
-@import "bootstrap";
 
 body {
   background-color: #00A2E8;
