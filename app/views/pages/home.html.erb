@@ -1,122 +1,124 @@
-<div class="landing-page">
-  <h1 class="message">Get your city invited.</h1>
+<div class="blue-background">
+  <div class="landing-page">
+    <h1 class="message">Get your city invited.</h1>
 
-  <div class="row signup-panel">
-    <div class="col-xs-4 left-message">
-      <p> Sign up for an invite today. Cities with most votes will be invited as we roll out.</p>
-    </div>
-    <div class="col-xs-8">
-      <div class="signup-form clearfix">
-        <%= simple_form_for(@user, url: registration_path(@user)) do |f| %>
-          <%= f.error_notification %>
+    <div class="row signup-panel">
+      <div class="col-xs-4 left-message">
+        <p> Sign up for an invite today. Cities with most votes will be invited as we roll out.</p>
+      </div>
+      <div class="col-xs-8">
+        <div class="signup-form clearfix">
+          <%= simple_form_for(@user, url: registration_path(@user)) do |f| %>
+            <%= f.error_notification %>
 
-          <div class="form-inputs form-group clearfix">
-            <div class="col-xs-3">
-              <%= label_tag(:email, "Email") %>
+            <div class="form-inputs form-group clearfix">
+              <div class="col-xs-3">
+                <%= label_tag(:email, "Email") %>
+              </div>
+              <div class="col-xs-7">
+                <%= f.input :email, label: false , autofocus: true, input_html: { class: 'form-control' } %>
+              </div>
             </div>
-            <div class="col-xs-7">
-              <%= f.input :email, label: false , autofocus: true, input_html: { class: 'form-control' } %>
-            </div>
-          </div>
 
-          <div class="clearfix"></div>
-          <div class="form-inputs form-group clearfix">
-            <div class="col-xs-3">
-              <%= label_tag(:city, "City") %>
+            <div class="clearfix"></div>
+            <div class="form-inputs form-group clearfix">
+              <div class="col-xs-3">
+                <%= label_tag(:city, "City") %>
+              </div>
+              <div class="col-xs-7">
+                <%= f.input :city, label: false, input_html: { class: 'form-control' } %>
+                <%#= f.input :city, :as => :select, :collection => ['Add New', 'kaka'], include_blank: true, label: false %>
+              </div>
             </div>
-            <div class="col-xs-7">
-              <%= f.input :city, label: false, input_html: { class: 'form-control' } %>
-              <%#= f.input :city, :as => :select, :collection => ['Add New', 'kaka'], include_blank: true, label: false %>
-            </div>
-          </div>
 
-          <div class="clearfix"></div>
-          <div class="form-group clearfix">
-            <div class="col-xs-3"></div>
-            <div class="col-xs-7">
-              <%= f.button :submit, "Sign up", class: 'btn btn-submit' %>
+            <div class="clearfix"></div>
+            <div class="form-group clearfix">
+              <div class="col-xs-3"></div>
+              <div class="col-xs-7">
+                <%= f.button :submit, "Sign up", class: 'btn btn-submit' %>
+              </div>
             </div>
-          </div>
-        <% end %>
+          <% end %>
+        </div>
       </div>
     </div>
+
+    <div class="row foot-message">
+      <p> Text is the best way text write copy your next write text copy </p>
+    </div>
   </div>
 
-  <div class="row foot-message">
-    <p> Text is the best way text write copy your next write text copy </p>
-  </div>
-</div>
+  <script type="text/javascript">
 
-<script type="text/javascript">
+    function format(state) {
+      return state;
+    }
 
-  function format(state) {
-    return state;
-  }
+    function formatSelect(state){
+      return state;
+    }
 
-  function formatSelect(state){
-    return state;
-  }
-
-  $("input#user_city").select2({
-    multiple: true,
-    maximumSelectionSize: 1,
-    minimumInputLength: 1,
-    id: function(bond){ return bond; },
-    ajax: {
-        url: "/search/cities",
-        data: function(term) {
-          return {
-            q: term
+    $("input#user_city").select2({
+      multiple: true,
+      maximumSelectionSize: 1,
+      minimumInputLength: 1,
+      id: function(bond){ return bond; },
+      ajax: {
+          url: "/search/cities",
+          data: function(term) {
+            return {
+              q: term
+            }
+          },
+          dataType: 'json',
+          results: function (data, page) {
+            return {results: data};
           }
-        },
-        dataType: 'json',
-        results: function (data, page) {
-          return {results: data};
-        }
-    },
-    initSelection: function(element, callback) {
-      $.ajax("/search/cities", {
-          dataType: "json"
-      }).done(function(data) { callback(data); });
-    },
-    formatResult: format,
-    formatSelection: format,
-    // dropdownCssClass: "bigdrop", // apply css that makes the dropdown taller
-    escapeMarkup: function (m) { return m; } // we do not want to escape markup since we are displaying html in results
-  });
-</script>
+      },
+      initSelection: function(element, callback) {
+        $.ajax("/search/cities", {
+            dataType: "json"
+        }).done(function(data) { callback(data); });
+      },
+      formatResult: format,
+      formatSelection: format,
+      // dropdownCssClass: "bigdrop", // apply css that makes the dropdown taller
+      escapeMarkup: function (m) { return m; } // we do not want to escape markup since we are displaying html in results
+    });
+  </script>
 
-<style type="text/css">
-  .select2-search-choice {
-    background-image: none!important;
-    background-color: #00A2E8!important;
-    width: 275px!important;
-    padding: 3px 5px 3px 18px!important;
-    margin: 0!important;
-    line-height: 26px!important;
-    color: white!important;
-    cursor: default!important;
-    border: none!important;
-    border-radius: 0px!important;
-    box-shadow: none!important;
-  }
-  .select2-search-field {
-    background-color: #00A2E8!important;
-  }
-  ul.select2-choices {
-    background-color: #00A2E8!important;
-    border-radius: 0!important;
-    background-image: none!important;
-  }
-  .form-control {
-    color: white!important;
-    background-color: #00A2E8!important;
-    background-image: none!important;
-    border: 1px solid white;
-    border-radius: 0!important;
-  }
+  <style type="text/css">
+    .select2-search-choice {
+      background-image: none!important;
+      background-color: #00A2E8!important;
+      width: 275px!important;
+      padding: 3px 5px 3px 18px!important;
+      margin: 0!important;
+      line-height: 26px!important;
+      color: white!important;
+      cursor: default!important;
+      border: none!important;
+      border-radius: 0px!important;
+      box-shadow: none!important;
+    }
+    .select2-search-field {
+      background-color: #00A2E8!important;
+    }
+    ul.select2-choices {
+      background-color: #00A2E8!important;
+      border-radius: 0!important;
+      background-image: none!important;
+    }
+    .form-control {
+      color: white!important;
+      background-color: #00A2E8!important;
+      background-image: none!important;
+      border: 1px solid white;
+      border-radius: 0!important;
+    }
 
-  input.select2-input{
-    border: none!important;
-  }
-</style>
+    input.select2-input{
+      border: none!important;
+    }
+  </style>
+</div>
