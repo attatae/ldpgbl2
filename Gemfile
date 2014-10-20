@@ -12,6 +12,7 @@ gem 'settingslogic'
 gem 'annotate', '~> 2.6.5'
 gem 'kaminari'
 gem 'select2-rails'
+gem 'gibbon'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
@@ -37,6 +38,7 @@ gem 'spring',        group: :development
 
 group :development do
   gem 'letter_opener'
+  gem 'quiet_assets'
 end
 
 gem 'bootstrap-sass', '~> 3.2.0'

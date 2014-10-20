@@ -2,8 +2,8 @@ development:
   host: localhost
   adapter: postgresql
   database: ldpgbl2_development
-  username: postgres 
-  password: 'P0S*GR3$QL'
+  # username: postgres
+  # password: 'P0S*GR3$QL'
   port: 5432
   pool: 5
   timeout: 5000
@@ -15,7 +15,7 @@ test:
   host: localhost
   adapter: postgresql
   database: ldpgbl2_test
-  username: postgres 
+  username: postgres
   password: P0S*GR3$QL
   port: 5432
   pool: 5
@@ -25,7 +25,7 @@ production:
   host: localhost
   adapter: postgresql
   database: ldpgbl2_production
-  username: postgres 
+  username: postgres
   password: P0S*GR3$QL
   port: 5432
   pool: 5
