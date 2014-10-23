@@ -16,4 +16,5 @@
 //= require bootstrap
 //= require bootstrap-sprockets
 //= require select2
+//= require rrssb
 //= require_tree .

@@ -4,7 +4,8 @@ class PagesController < ApplicationController
   end
 
   def confirmation
-    @sign_ups = User.where(city: params[:city]).count
+    @ref = params[:ref]
+    @sign_ups = User.where(city: params[:city]).where.not(confirmed_at: nil).count
   end
 
   def confirmation_success

@@ -13,6 +13,8 @@ gem 'annotate', '~> 2.6.5'
 gem 'kaminari'
 gem 'select2-rails'
 gem 'gibbon'
+gem 'geocoder'
+gem 'browser'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'

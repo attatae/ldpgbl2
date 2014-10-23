@@ -8,9 +8,9 @@
       </div>
       <div class="col-xs-8">
         <div class="signup-form clearfix">
-          <%= simple_form_for(@user, url: registration_path(@user)) do |f| %>
+          <% reg_url = params[:ref] ? "#{registration_path(@user)}?ref=#{params[:ref]}" : registration_path(@user) %>
+          <%= simple_form_for(@user, url: reg_url) do |f| %>
             <%= f.error_notification %>
-
             <div class="form-inputs form-group clearfix">
               <div class="col-xs-3">
                 <%= label_tag(:email, "Email") %>
