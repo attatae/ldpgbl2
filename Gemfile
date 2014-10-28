@@ -45,7 +45,9 @@ group :development do
   gem 'quiet_assets'
 end
 
+gem 'unicorn'
 gem 'bootstrap-sass', '~> 3.2.0'
+gem 'jquery-ui-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

@@ -47,8 +47,12 @@
       <p> Text is the best way text write copy your next write text copy </p>
     </div>
   </div>
-
+<%= content_for :javascripts do %>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
   <script type="text/javascript">
+    $(document).ready(function(){
+      initialize();
+    });
 
     function format(state) {
       return state;
@@ -57,7 +61,15 @@
     function formatSelect(state){
       return state;
     }
-
+    
+    function initialize(){
+      var input = document.getElementById('user_city');
+      var autocomplete = new google.maps.places.Autocomplete(input);
+      google.maps.event.addListener(autocomplete, 'place_changed', function() {
+        var place = autocomplete.getPlace();
+      });
+    }
+    /*
     $("input#user_city").select2({
       multiple: true,
       maximumSelectionSize: 1,
@@ -85,40 +97,7 @@
       // dropdownCssClass: "bigdrop", // apply css that makes the dropdown taller
       escapeMarkup: function (m) { return m; } // we do not want to escape markup since we are displaying html in results
     });
+    */
   </script>
-
-  <style type="text/css">
-    .select2-search-choice {
-      background-image: none!important;
-      background-color: #00A2E8!important;
-      width: 275px!important;
-      padding: 3px 5px 3px 18px!important;
-      margin: 0!important;
-      line-height: 26px!important;
-      color: white!important;
-      cursor: default!important;
-      border: none!important;
-      border-radius: 0px!important;
-      box-shadow: none!important;
-    }
-    .select2-search-field {
-      background-color: #00A2E8!important;
-    }
-    ul.select2-choices {
-      background-color: #00A2E8!important;
-      border-radius: 0!important;
-      background-image: none!important;
-    }
-    .form-control {
-      color: white!important;
-      background-color: #00A2E8!important;
-      background-image: none!important;
-      border: 1px solid white;
-      border-radius: 0!important;
-    }
-
-    input.select2-input{
-      border: none!important;
-    }
-  </style>
+<% end %>
 </div>
